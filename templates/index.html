@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Q and A Platform for Final Assignment">
+  <meta name="author" content="Vaishnav">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q and A Platform</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom right, red, yellow);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: yellow;
+      height: 10%;
+      min-height: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .outer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner {
+      text-align: center;
+      max-width: 500px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: black;
+      color: white;
+    }
+
+    p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>The VaishBOT</h1>
+  </header>
+
+  <div class="outer">
+    <div class="inner">
+      <form action="/success" method="post" enctype="multipart/form-data">
+        <label for="file">Upload doc:</label>
+        <input type="file" name="file" accept=".xls,.xlsx,.pdf,.csv,.txt, .html" />
+        <label for="query">Question:</label>
+        <input type="text" id="query" name="query">
+        <input type="submit" value="submit">
+        <input type="reset">
+      </form>
+      <p>File Name: {{name}}</p>
+      <p>Answer: {{answer}}</p>
+    </div>
+  </div>
+</body>
+
+</html>
